@@ -1,0 +1,12 @@
+* {
+    margin: 10px;
+}
+
+input {
+    padding: 5px;
+}
+
+a {
+    display: flex;
+    flex-direction: column;
+}
