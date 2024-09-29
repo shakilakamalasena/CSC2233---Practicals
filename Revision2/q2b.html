@@ -1,0 +1,20 @@
+<html>
+<head>
+	<script  src ="jquery-3.7.1.min.js"> </script>
+	<script>
+        $(document).ready(function() {
+            $("p").mouseenter(function(){
+				$(this).css("background-color", "blue");
+				$(this).text("Hello!");
+			});
+			$("p").mouseleave(function(){
+				$(this).text("Bye!");
+				$(this).fadeOut("slow");
+			});
+        });
+    </script>
+</head>
+<body>
+	<p id="message">Welcome</p>
+</body>
+</html>

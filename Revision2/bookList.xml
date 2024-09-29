@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Catalog [
+	<!ELEMENT Catalog (book+)>
+	<!ELEMENT book (date, title, fname, lname, publisher)>
+	<!ELEMENT date (#PCDATA)>
+	<!ELEMENT title (#PCDATA)>
+	<!ELEMENT fname (#PCDATA)>
+	<!ELEMENT lname (#PCDATA)>
+	<!ELEMENT publisher (country*)>
+	<!ELEMENT country (#PCDATA)>
+]>
+
+<Catalog>
+	<book>
+		<date>1995</date>
+		<title> Introduction to Computer Graphics </title>
+		<fname>James</fname>
+		<lname>Foley</lname>
+		<publisher>
+			<country>India</country>
+			<country>USA</country>
+		</publisher>
+	</book>
+</Catalog> 
