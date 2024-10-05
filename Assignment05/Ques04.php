@@ -1,3 +1,34 @@
+<?php
+$nameError = $addressError = $emailError = "";
+$name = $address = $email = "";
+$formValid = false;
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (empty($_POST["name"])) {
+        $nameError = "Missing";
+    } else {
+        $name = $_POST["name"];
+    }
+
+    if (empty($_POST["address"])) {
+        $addressError = "Missing";
+    } else {
+        $address = $_POST["address"];
+    }
+
+    if (empty($_POST["email"])) {
+        $emailError = "Missing";
+    } else {
+        $email = $_POST["email"];
+    }
+
+    if ($name != "" && $address != "" && $email != "") {
+        $formValid = true;
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,59 +41,29 @@
             color: red;
         }
     </style>
-
-    <script>
-        function validateForm() {
-            var name = document.getElementById("name").value;
-            var address = document.getElementById("address").value;
-            var email = document.getElementById("email").value;
-            var isValid = true;
-
-            // MEKEN KALIN THIBBA MESSAGES RESET WENAWA
-            document.getElementById("nameError").innerHTML = "";
-            document.getElementById("addressError").innerHTML = "";
-            document.getElementById("emailError").innerHTML = "";
-
-            // HIS THIYENA EWWA CHECK KARANAWA
-            if (name == "") {
-                isValid = false;
-                document.getElementById("nameError").innerHTML = " Missing";
-            }
-            if (address == "") {
-                isValid = false;
-                document.getElementById("addressError").innerHTML = " Missing";
-            }
-            if (email == "") {
-                isValid = false;
-                document.getElementById("emailError").innerHTML = " Missing";
-            }
-
-            // OKKOMA PIRILANAM RESULT EKA PENNANAWA
-            if (isValid) {
-                var result = "Entered Details:<br>";
-                result += "Name: " + name + "<br>";
-                result += "Address: " + address + "<br>";
-                result += "Email: " + email;
-                document.getElementById("result").innerHTML = result;
-            }
-
-            return false; // MEKEN THAMAY HISWA THIYENAWANAM FORM SUBMIT KARANNA NODII BLOCK KARANNE
-        }
-    </script>
-
 </head>
 
 <body>
     <h1>Form Valid Example</h1>
-    <form id="myForm" onsubmit="return validateForm()">
-        Name: <input type="text" id="name"><span id="nameError"></span><br><br>
-        Address: <input type="text" id="address"><span id="addressError"></span><br><br>
-        Email: <input type="text" id="email"><span id="emailError"></span><br><br>
+    <form method="post">
+        Name: <input type="text" name="name">
+        <span id="nameError"><?php echo $nameError ?></span><br><br>
+        Address: <input type="text" name="address">
+        <span id="addressError"><?php echo $addressError ?></span><br><br>
+        Email: <input type="email" name="email">
+        <span id="emailError"><?php echo $emailError ?></span><br><br>
         <input type="submit" value="Submit">
     </form>
 
     <br><br>
-    <div id="result"></div>
+    <?php
+    if ($formValid) {
+        echo "<h3>Entered Details</h3>";
+        echo "Name: " . $name . "<br/>";
+        echo "Address: " . $address . "<br/>";
+        echo "Email: " . $email . "<br/>";
+    }
+    ?>
 </body>
 
 </html>
