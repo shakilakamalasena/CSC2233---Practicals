@@ -1,0 +1,12 @@
+<Students>
+    <Student>
+        <Name>Ruvini</Name>
+        <Age>22</Age>
+        <Marks>70</Marks>
+    </Student>
+    <Student>
+        <Name>Kamani</Name>
+        <Age>23</Age>
+        <Marks>65</Marks>
+    </Student>
+</Students>

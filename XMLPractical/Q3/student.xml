@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE student [
+<!ELEMENT student (firstName, lastName, id, plan)>
+<!ELEMENT firstName (#PCDATA)>
+<!ELEMENT lastName (#PCDATA)>
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT plan (courses)>
+<!ELEMENT courses (course+)>
+<!ATTLIST courses year CDATA #REQUIRED>
+<!ELEMENT course (name, shortName, record?)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT shortName (#PCDATA)>
+<!ELEMENT record (marks, grade)>
+<!ELEMENT marks (#PCDATA)>
+<!ELEMENT grade (#PCDATA)>
+]>
+
+<student>
+    <firstName>Luca</firstName>
+    <lastName>Rossi</lastName>
+    <id>281283</id>
+    <plan>
+        <courses year="3">
+            <course>
+                <name> Internet Programming </name>
+                <shortName>COM3113</shortName>
+                <record>
+                    <marks> 30</marks>
+                    <grade>D</grade>
+                </record>
+            </course>
+            <course>
+                <name>Programming Techniques</name>
+                <shortName>COM3231</shortName>
+            </course>
+        </courses>
+    </plan>
+</student>

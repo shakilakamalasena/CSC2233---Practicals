@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE menu SYSTEM "menu.dtd">
+<menu>
+    <category>International Foods</category>
+    <item>
+        <name>Sushi</name>
+        <description>Japanese, raw fish fillet covering rice</description>
+        <price>$ 9.95</price>
+    </item>
+    <item>
+        <name>Kimchi</name>
+        <description>Korean, pickled cabbage, very hot</description>
+        <price>$ 4.95</price>
+    </item>
+    <item>
+        <name>Sesame</name>
+        <description>Chinese, fried chicken sweet</description>
+        <price>$ 7.95</price>
+    </item>
+</menu>
