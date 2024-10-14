@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <script src="jquery-3.7.1.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#lvl1courses").hide();
+                $("#lvl2courses").hide();
+                $("#lvl1head").hover(function () {
+                    $("#lvl1courses").toggle();
+                });
+                $("#lvl2head").hover(function () {
+                    $("#lvl2courses").toggle();
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h2 id="lvl1head">Level one</h2>
+        <ul id="lvl1courses">
+            <li>csc113alpha</li>
+            <li>csc1251</li>
+        </ul>
+        <h2 id="lvl2head">Level two</h2>
+        <ul id="lvl2courses">
+            <li>csc113alpha</li>
+            <li>csc1251</li>
+        </ul>
+    </body>
+</html>
